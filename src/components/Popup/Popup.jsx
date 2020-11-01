@@ -5,7 +5,6 @@ import CalcDed from '../CalcDed';
 
 const Popup = ({ handleClosePopup }) => {
   const [salary, setSalary] = useState('');
-  const [isAdd, setIsAdd] = useState(false);
 
   const salaryFormat = (inputVal) => {
     // const rub = '₽';
@@ -20,8 +19,11 @@ const Popup = ({ handleClosePopup }) => {
     <form className="popup">
       <fieldset className="popup__salary">
         <legend className="popup__legend">Налоговый вычет</legend>
-        <p className="popup__description">Используйте налоговый вычет чтобы погасить ипотеку досрочно.{' '}
-        Размер налогового вычета составляет не более 13% от своего официального годового дохода.</p>
+        <p className="popup__description">
+          Используйте налоговый вычет чтобы погасить ипотеку досрочно.{' '}
+          Размер налогового вычета составляет не более 13%{' '}
+          от своего официального годового дохода.
+        </p>
 
         <div className="popup__data">
           <label
@@ -38,7 +40,6 @@ const Popup = ({ handleClosePopup }) => {
             value={salaryFormat(salary)}
             onChange={(evt) => {
               const inputValue = salaryInit(evt.target.value);
-              if (!inputValue) setIsAdd(false);
 
               if (Number(inputValue)) {
                 setSalary(inputValue);
@@ -53,15 +54,12 @@ const Popup = ({ handleClosePopup }) => {
         </div>
       </fieldset>
 
-      <CalcDed salary={salary} isAdd={isAdd} />
+      <CalcDed salary={salary} />
 
       <button
         type="submit"
         className="popup__btn-add"
-        onClick={(evt) => {
-          evt.preventDefault();
-          if (salary) setIsAdd(true);
-        }}
+        onClick={(evt) => evt.preventDefault()}
       >Добавить</button>
 
       <button
