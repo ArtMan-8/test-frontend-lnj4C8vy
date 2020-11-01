@@ -1,4 +1,6 @@
 .app {
+  position: relative;
+
   display: flex;
   justify-content: center;
   align-items: center;
@@ -22,7 +24,7 @@
   border: 1px solid var(--color-white);
   border-radius: 6px;
   cursor: pointer;
-  filter: drop-shadow(0px 0px 44px var(--color-light));
+  filter: drop-shadow(0px 0px 44px var(--color-grey-light));
 
   &:hover {
     color: var(--color-black);
