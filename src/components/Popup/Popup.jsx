@@ -1,15 +1,24 @@
 import React, { useState } from 'react';
 import T from 'prop-types';
 import './popup.scss';
+import CalcDed from '../CalcDed';
 
 const Popup = ({ handleClosePopup }) => {
-  // const [isValid, setIsValid] = useState(true);
-  const [salary, setSalary] = useState(null);
-  console.log(salary);
+  const [salary, setSalary] = useState('');
+  const [isAdd, setIsAdd] = useState(false);
+
+  const salaryFormat = (inputVal) => {
+    // const rub = '₽';
+    const formatNum = inputVal.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
+    const formatValue = `${formatNum}`;
+    return formatValue;
+  };
+
+  const salaryInit = (formatVal) => parseInt(formatVal.replace(/\s+/g, '').trim(), 10);
 
   return (
     <form className="popup">
-      <fieldset className="popup__field">
+      <fieldset className="popup__salary">
         <legend className="popup__legend">Налоговый вычет</legend>
         <p className="popup__description">Используйте налоговый вычет чтобы погасить ипотеку досрочно.{' '}
         Размер налогового вычета составляет не более 13% от своего официального годового дохода.</p>
@@ -26,14 +35,34 @@ const Popup = ({ handleClosePopup }) => {
             className="popup__data-input"
             placeholder="Введите данные"
             required
+            value={salaryFormat(salary)}
             onChange={(evt) => {
-              setSalary(evt.target.value);
+              const inputValue = salaryInit(evt.target.value);
+              if (!inputValue) setIsAdd(false);
+
+              if (Number(inputValue)) {
+                setSalary(inputValue);
+                return;
+              }
+
+              setSalary('');
             }}
           />
 
           <p className="popup__data-none">Поле обязательно для заполнения</p>
         </div>
       </fieldset>
+
+      <CalcDed salary={salary} isAdd={isAdd} />
+
+      <button
+        type="submit"
+        className="popup__btn-add"
+        onClick={(evt) => {
+          evt.preventDefault();
+          if (salary) setIsAdd(true);
+        }}
+      >Добавить</button>
 
       <button
         type="button"

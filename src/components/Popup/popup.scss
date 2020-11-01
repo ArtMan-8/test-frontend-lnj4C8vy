@@ -8,14 +8,15 @@
   align-items: center;
   box-sizing: border-box;
   width: 100%;
-  max-width: 500px;
+  max-width: 450px;
   height: 100%;
+  max-height: 740px;
   padding: 32px 24px;
 
   background-color: var(--color-white);
 }
 
-.popup__field {
+.popup__salary {
   margin: 0;
   padding: 0;
 
@@ -40,7 +41,7 @@
   position: relative;
 
   margin-top: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 14px;
 }
 
 .popup__data-label {
@@ -134,5 +135,43 @@
 
   &:after {
     transform: rotate(-45deg);
+  }
+}
+
+.popup__btn-add {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  width: 100%;
+  margin-top: auto;
+  padding: 12px;
+
+  font-weight: 500;
+  font-size: 12px;
+  color: var(--color-white);
+
+  background: var(--gradient-red);
+  border: none;
+  border-radius: 6px;
+  box-shadow: 0 0 24px rgba(234, 0, 41, 0.33);
+  cursor: pointer;
+
+  &:hover {
+    color: var(--color-white);
+
+    background: var(--color-red);
+  }
+
+  &:active {
+    color: var(--color-white);
+
+    background: var(--color-red);
+  }
+
+  &:disabled {
+    color: var(--color-white);
+
+    background: var(--color-grey);
   }
 }
