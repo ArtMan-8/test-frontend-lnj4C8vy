@@ -1,6 +1,8 @@
 import React from 'react';
 import './app.scss';
 
-const App = () => <h1>Налоговый вычет</h1>;
+const App = () => <section className="app">
+  <button type="button" className="app__btn-ded">Налоговый вычет</button>
+</section>;
 
 export default App;
