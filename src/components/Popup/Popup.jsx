@@ -14,7 +14,7 @@ const Popup = ({ handleClosePopup }) => {
         <legend className="popup__legend">Налоговый вычет</legend>
         <p className="popup__description">
           Используйте налоговый вычет чтобы погасить ипотеку досрочно.{' '}
-          Размер налогового вычета составляет не более 13%{' '}
+          Размер налогового вычета составляет не&nbsp;более&nbsp;13%{' '}
           от своего официального годового дохода.
         </p>
 
@@ -48,12 +48,6 @@ const Popup = ({ handleClosePopup }) => {
       </fieldset>
 
       <CalcDed salary={salary} />
-
-      <button
-        type="submit"
-        className="popup__btn-add"
-        onClick={(evt) => evt.preventDefault()}
-      >Добавить</button>
 
       <button
         type="button"

@@ -71,6 +71,12 @@ const CalcDed = ({ salary }) => {
           className="calc-ded__controls-btn"
         >Срок</button>
       </div>
+
+      <button
+        type="submit"
+        className="calc-ded__btn-add"
+        onClick={(evt) => evt.preventDefault()}
+      >Добавить</button>
     </fieldset>
   );
 };
