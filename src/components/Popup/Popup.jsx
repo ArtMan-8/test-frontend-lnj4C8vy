@@ -2,18 +2,11 @@ import React, { useState } from 'react';
 import T from 'prop-types';
 import './popup.scss';
 import CalcDed from '../CalcDed';
+import salaryFormat from '../../utils/salaryFormat';
+import salaryInit from '../../utils/salaryInit';
 
 const Popup = ({ handleClosePopup }) => {
   const [salary, setSalary] = useState('');
-
-  const salaryFormat = (inputVal) => {
-    // const rub = '₽';
-    const formatNum = inputVal.toString().replace(/(\d)(?=(\d{3})+$)/g, '$1 ');
-    const formatValue = `${formatNum}`;
-    return formatValue;
-  };
-
-  const salaryInit = (formatVal) => parseInt(formatVal.replace(/\s+/g, '').trim(), 10);
 
   return (
     <form className="popup">
