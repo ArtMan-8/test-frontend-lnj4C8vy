@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import T from 'prop-types';
 import './popup.scss';
 import CalcDed from '../CalcDed';
@@ -7,54 +7,62 @@ import salaryInit from '../../utils/salaryInit';
 
 const Popup = ({ handleClosePopup }) => {
   const [salary, setSalary] = useState('');
+  const wrapper = useRef(null);
 
   return (
-    <form className="popup">
-      <fieldset className="popup__salary">
-        <legend className="popup__legend">Налоговый вычет</legend>
-        <p className="popup__description">
-          Используйте налоговый вычет чтобы погасить ипотеку досрочно.{' '}
-          Размер налогового вычета составляет не&nbsp;более&nbsp;13%{' '}
-          от своего официального годового дохода.
-        </p>
+    <div className="popup-wrapper"
+    ref={wrapper}
+      onClick={(evt) => (
+        evt.target === wrapper.current && handleClosePopup(false)
+      )}
+    >
+      <form className="popup">
+        <fieldset className="popup__salary">
+          <legend className="popup__legend">Налоговый вычет</legend>
+          <p className="popup__description">
+            Используйте налоговый вычет чтобы погасить ипотеку досрочно.{' '}
+            Размер налогового вычета составляет не&nbsp;более&nbsp;13%{' '}
+            от своего официального годового дохода.
+          </p>
 
-        <div className="popup__data">
-          <label
-            htmlFor="salary"
-            className="popup__data-label"
-          >Ваша зарплата в месяц</label>
+          <div className="popup__data">
+            <label
+              htmlFor="salary"
+              className="popup__data-label"
+            >Ваша зарплата в месяц</label>
 
-          <input
-            type="text"
-            id="salary"
-            className="popup__data-input"
-            placeholder="Введите данные"
-            required
-            value={salaryFormat(salary)}
-            onChange={(evt) => {
-              const inputValue = salaryInit(evt.target.value);
+            <input
+              type="text"
+              id="salary"
+              className="popup__data-input"
+              placeholder="Введите данные"
+              required
+              value={salaryFormat(salary)}
+              onChange={(evt) => {
+                const inputValue = salaryInit(evt.target.value);
 
-              if (Number(inputValue)) {
-                setSalary(inputValue);
-                return;
-              }
+                if (Number(inputValue)) {
+                  setSalary(inputValue);
+                  return;
+                }
 
-              setSalary('');
-            }}
-          />
+                setSalary('');
+              }}
+            />
 
-          <p className="popup__data-none">Поле обязательно для заполнения</p>
-        </div>
-      </fieldset>
+            <p className="popup__data-none">Поле обязательно для заполнения</p>
+          </div>
+        </fieldset>
 
-      <CalcDed salary={salary} />
+        <CalcDed salary={salary} />
 
-      <button
-        type="button"
-        className="popup__btn-close"
-        onClick={handleClosePopup}
-      >Закрыть попап</button>
-    </form>
+        <button
+          type="button"
+          className="popup__btn-close"
+          onClick={handleClosePopup}
+        >Закрыть попап</button>
+      </form>
+    </div>
   );
 };
 
