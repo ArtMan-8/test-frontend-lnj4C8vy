@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/test-frontend-lnj4C8vy/static/css/main.e892b9c6.chunk.css",
+    "main.js": "/test-frontend-lnj4C8vy/static/js/main.21301461.chunk.js",
+    "main.js.map": "/test-frontend-lnj4C8vy/static/js/main.21301461.chunk.js.map",
+    "runtime-main.js": "/test-frontend-lnj4C8vy/static/js/runtime-main.dfa01ab7.js",
+    "runtime-main.js.map": "/test-frontend-lnj4C8vy/static/js/runtime-main.dfa01ab7.js.map",
+    "static/js/2.610c38c2.chunk.js": "/test-frontend-lnj4C8vy/static/js/2.610c38c2.chunk.js",
+    "static/js/2.610c38c2.chunk.js.map": "/test-frontend-lnj4C8vy/static/js/2.610c38c2.chunk.js.map",
+    "index.html": "/test-frontend-lnj4C8vy/index.html",
+    "static/css/main.e892b9c6.chunk.css.map": "/test-frontend-lnj4C8vy/static/css/main.e892b9c6.chunk.css.map",
+    "static/js/2.610c38c2.chunk.js.LICENSE.txt": "/test-frontend-lnj4C8vy/static/js/2.610c38c2.chunk.js.LICENSE.txt",
+    "static/media/index.scss": "/test-frontend-lnj4C8vy/static/media/LabGrotesque-Regular.a25b6e0c.eot"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dfa01ab7.js",
+    "static/js/2.610c38c2.chunk.js",
+    "static/css/main.e892b9c6.chunk.css",
+    "static/js/main.21301461.chunk.js"
+  ]
+}
