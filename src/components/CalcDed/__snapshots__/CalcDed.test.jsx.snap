@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App snapshot 1`] = `
+<DocumentFragment>
+  <fieldset
+    class="calc-ded"
+  >
+    <button
+      class="calc-ded__calc"
+      type="button"
+    >
+      Рассчитать
+    </button>
+    <div
+      class="calc-ded__controls"
+    >
+      <h3
+        class="calc-ded__controls-header"
+      >
+        Что уменьшаем?
+      </h3>
+      <button
+        class="calc-ded__controls-btn calc-ded__controls-btn--active"
+        type="button"
+      >
+        Платёж
+      </button>
+      <button
+        class="calc-ded__controls-btn"
+        type="button"
+      >
+        Срок
+      </button>
+    </div>
+    <button
+      class="calc-ded__btn-add"
+      type="submit"
+    >
+      Добавить
+    </button>
+  </fieldset>
+</DocumentFragment>
+`;

@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="popup-wrapper"
+  >
+    <form
+      class="popup"
+    >
+      <fieldset
+        class="popup__salary"
+      >
+        <legend
+          class="popup__legend"
+        >
+          Налоговый вычет
+        </legend>
+        <p
+          class="popup__description"
+        >
+          Используйте налоговый вычет чтобы погасить ипотеку досрочно. Размер налогового вычета составляет не более 13% от своего официального годового дохода.
+        </p>
+        <div
+          class="popup__data"
+        >
+          <label
+            class="popup__data-label"
+            for="salary"
+          >
+            Ваша зарплата в месяц
+          </label>
+          <input
+            class="popup__data-input"
+            id="salary"
+            placeholder="Введите данные"
+            required=""
+            type="text"
+            value=""
+          />
+          <p
+            class="popup__data-none"
+          >
+            Поле обязательно для заполнения
+          </p>
+        </div>
+      </fieldset>
+      <fieldset
+        class="calc-ded"
+      >
+        <button
+          class="calc-ded__calc"
+          type="button"
+        >
+          Рассчитать
+        </button>
+        <div
+          class="calc-ded__controls"
+        >
+          <h3
+            class="calc-ded__controls-header"
+          >
+            Что уменьшаем?
+          </h3>
+          <button
+            class="calc-ded__controls-btn calc-ded__controls-btn--active"
+            type="button"
+          >
+            Платёж
+          </button>
+          <button
+            class="calc-ded__controls-btn"
+            type="button"
+          >
+            Срок
+          </button>
+        </div>
+        <button
+          class="calc-ded__btn-add"
+          type="submit"
+        >
+          Добавить
+        </button>
+      </fieldset>
+      <button
+        class="popup__btn-close"
+        type="button"
+      >
+        Закрыть попап
+      </button>
+    </form>
+  </div>
+</DocumentFragment>
+`;
