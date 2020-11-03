@@ -94,6 +94,8 @@
 }
 
 .popup__data-input {
+  position: relative;
+
   box-sizing: border-box;
   width: 100%;
   padding: 10px;
@@ -102,6 +104,8 @@
 
   border: 1px solid var(--color-grey);
   border-radius: 3px;
+
+  pointer-events: visibleFill;
 
   &:hover {
     border-color: var(--color-black);

@@ -4,6 +4,7 @@ import './popup.scss';
 import CalcDed from '../CalcDed';
 import salaryFormat from '../../utils/salaryFormat';
 import salaryInit from '../../utils/salaryInit';
+import showRub from '../../utils/showRub';
 
 const Popup = ({ handleClosePopup }) => {
   const [salary, setSalary] = useState('');
@@ -43,13 +44,13 @@ const Popup = ({ handleClosePopup }) => {
 
                 if (Number(inputValue)) {
                   setSalary(inputValue);
+                  showRub(evt);
                   return;
                 }
 
                 setSalary('');
               }}
             />
-
             <p className="popup__data-none">Поле обязательно для заполнения</p>
           </div>
         </fieldset>
