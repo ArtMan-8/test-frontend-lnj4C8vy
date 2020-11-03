@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "author": "Vladimir Artyukhov",
   "license": "ISC",
+  "homepage": "https://artman-8.github.io/test-frontend-lnj4C8vy/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",

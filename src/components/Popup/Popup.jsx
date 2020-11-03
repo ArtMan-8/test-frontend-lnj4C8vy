@@ -42,9 +42,9 @@ const Popup = ({ handleClosePopup }) => {
               onChange={(evt) => {
                 const inputValue = salaryInit(evt.target.value);
 
+                showRub(evt);
                 if (Number(inputValue)) {
-                  setSalary(inputValue);
-                  showRub(evt);
+                  setSalary(inputValue && inputValue);
                   return;
                 }
 

@@ -1,3 +1,5 @@
+import salaryInit from './salaryInit';
+
 export default function showRub(evt) {
   if (document.querySelector('.dummy-rub')) document.querySelector('.dummy-rub').remove();
 
@@ -19,5 +21,5 @@ export default function showRub(evt) {
   showR.classList.add('dummy-rub');
   showR.textContent = ' ₽';
 
-  input.after(showR);
+  if (salaryInit(input.value)) input.after(showR);
 }
